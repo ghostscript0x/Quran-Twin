@@ -1,4 +1,8 @@
-const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "https://quran-twin-backend.pxxl.click";
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
+if (!BACKEND_URL) {
+  throw new Error("Missing required environment variable VITE_BACKEND_URL");
+}
 
 export type StreakData = {
   currentStreak: number;

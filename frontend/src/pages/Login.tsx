@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { Moon, Loader2 } from "lucide-react";
+import { getBackendUrl } from "@/lib/auth";
 
-const BACKEND_URL = "http://localhost:5000";
+const BACKEND_URL = getBackendUrl();
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
