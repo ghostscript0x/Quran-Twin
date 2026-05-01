@@ -175,7 +175,7 @@ export async function logout(req, res) {
     logger.error("Error clearing tokens:", err.message);
   }
 
-  res.clearCookie("access_token");
-  res.clearCookie("user_sub");
+  res.clearCookie("access_token", { httpOnly: true, secure: true, sameSite: "none", path: "/" });
+  res.clearCookie("user_sub", { httpOnly: true, secure: true, sameSite: "none", path: "/" });
   res.json({ loggedOut: true });
 }

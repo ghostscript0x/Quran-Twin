@@ -32,7 +32,6 @@ export const logout = async () => {
     });
   } catch {
   }
-  window.location.href = "/";
 };
 
 export const getBackendUrl = () => BACKEND_URL;
