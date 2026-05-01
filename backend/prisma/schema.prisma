@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int       @id @default(autoincrement())
+  sub           String    @unique
+  email         String?
+  username      String?
+  firstName     String?
+  lastName     String?
+  avatar       String?
+  access_token  String?
+  refresh_token String?
+  created_at    DateTime  @default(now())
+  updated_at    DateTime  @updatedAt
+  streak       Streak?
+}
+
+model Streak {
+  id              Int      @id @default(autoincrement())
+  userId           Int      @unique
+  currentStreak    Int      @default(0)
+  lastStreakDate   String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Emotion {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  verses    String[]
+  createdAt DateTime @default(now())
+}

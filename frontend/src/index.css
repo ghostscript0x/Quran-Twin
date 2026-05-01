@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Quran Twin — calm, spiritual dark design system. All colors HSL. */
+
+@layer base {
+  :root {
+    /* Deep night-green background, warm gold accents */
+    --background: 160 28% 6%;
+    --foreground: 40 30% 92%;
+
+    --card: 160 24% 9%;
+    --card-foreground: 40 30% 92%;
+
+    --popover: 160 28% 8%;
+    --popover-foreground: 40 30% 92%;
+
+    /* Gold — primary accent */
+    --primary: 42 65% 62%;
+    --primary-foreground: 160 30% 8%;
+
+    /* Deep emerald — secondary surface */
+    --secondary: 158 30% 14%;
+    --secondary-foreground: 40 30% 92%;
+
+    --muted: 160 18% 14%;
+    --muted-foreground: 40 12% 65%;
+
+    --accent: 158 40% 22%;
+    --accent-foreground: 42 65% 72%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 40 30% 96%;
+
+    --border: 160 20% 16%;
+    --input: 160 22% 13%;
+    --ring: 42 65% 62%;
+
+    --radius: 1rem;
+
+    /* Spiritual gradients */
+    --gradient-night: radial-gradient(ellipse at top, hsl(160 35% 12%) 0%, hsl(160 28% 6%) 60%, hsl(160 30% 4%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 75% 70%) 0%, hsl(38 60% 55%) 100%);
+    --gradient-card: linear-gradient(160deg, hsl(160 26% 11% / 0.9) 0%, hsl(158 30% 8% / 0.9) 100%);
+    --gradient-verse: linear-gradient(180deg, hsl(158 35% 14% / 0.6) 0%, hsl(160 28% 8% / 0.4) 100%);
+
+    /* Shadows — soft glow */
+    --shadow-soft: 0 10px 40px -15px hsl(160 50% 2% / 0.6);
+    --shadow-glow: 0 0 60px -10px hsl(42 65% 50% / 0.25);
+    --shadow-card: 0 20px 50px -20px hsl(160 60% 2% / 0.7), 0 0 0 1px hsl(160 20% 18% / 0.5);
+
+    /* Transitions */
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 160 28% 6%;
+    --sidebar-foreground: 40 30% 92%;
+    --sidebar-primary: 42 65% 62%;
+    --sidebar-primary-foreground: 160 30% 8%;
+    --sidebar-accent: 158 30% 14%;
+    --sidebar-accent-foreground: 40 30% 92%;
+    --sidebar-border: 160 20% 16%;
+    --sidebar-ring: 42 65% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--gradient-night);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  .font-arabic {
+    font-family: 'Amiri', 'Scheherazade New', serif;
+    direction: rtl;
+    line-height: 2;
+  }
+
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.01em;
+  }
+  .quran-html-content sup {
+    @apply text-[10px] text-primary/70 align-super ml-0.5;
+  }
+  
+  .quran-html-content .s {
+    @apply not-italic opacity-80;
+  }
+
+  .quran-html-content p {
+    @apply mb-3 last:mb-0;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-night { background: var(--gradient-night); }
+  .bg-gradient-gold { background: var(--gradient-gold); }
+  .bg-gradient-card { background: var(--gradient-card); }
+  .bg-gradient-verse { background: var(--gradient-verse); }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .shadow-card { box-shadow: var(--shadow-card); }
+  .text-gold { color: hsl(var(--primary)); }
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .transition-smooth { transition: all 0.4s var(--transition-smooth); }
+}
