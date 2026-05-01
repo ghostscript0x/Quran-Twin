@@ -1,3 +1,8 @@
+/**
+ * Quran Twin - Backend Server
+ * © 2026 Abdul-Quddus (@ghostscript0x). All rights reserved.
+ */
+
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";

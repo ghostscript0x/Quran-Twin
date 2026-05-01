@@ -213,6 +213,15 @@ MIT — You retain full ownership of your project.
 
 ---
 
+## Author
+
+**Abdul-Quddus**  
+Software Developer from Nigeria
+
+- GitHub: [@ghostscript0x](https://github.com/ghostscript0x)
+
+---
+
 ## Acknowledgments
 
 - [Quran Foundation](https://quran.foundation) — For the powerful API ecosystem
@@ -222,5 +231,6 @@ MIT — You retain full ownership of your project.
 ---
 
 <p align="center">
-  Built for the Quran Foundation Hackathon 2026
+  Built for the Quran Foundation Hackathon 2026<br />
+  © 2026 Abdul-Quddus (@ghostscript0x). All rights reserved.
 </p>
