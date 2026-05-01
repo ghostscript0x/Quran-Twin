@@ -49,6 +49,37 @@ Quran Twin addresses this by:
 - **PostgreSQL** database
 - **Redis** for rate limiting
 
+---
+
+## Database Schema
+
+![Database Schema](README_DB_Schema.png)
+
+```
+┌─────────────────────┐       ┌─────────────────────┐
+│       User         │       │      Streak          │
+├─────────────────────┤       ├─────────────────────┤
+│ id (Int, PK)        │───┐   │ id (Int, PK)        │
+│ sub (String, unique)│   └──│ userId (Int, FK)   │
+│ email (String)      │       │ currentStreak     │
+│ username (String)   │       │ lastStreakDate     │
+│ firstName (String)  │       │ createdAt          │
+│ lastName (String)   │       │ updatedAt          │
+│ avatar (String)     │       └─────────────────────┘
+│ access_token       │
+│ refresh_token      │
+└─────────────────────┘
+
+┌─────────────────────┐
+│     Emotion         │
+├─────────────────────┤
+│ id (Int, PK)        │
+│ name (String, unique)│
+│ verses (String[])  │
+│ createdAt          │
+└─────────────────────┘
+```
+
 ### APIs
 - **Quran Foundation API** — verses, translations, tafsir
 - **Quran Foundation User API** — notes, reflections (Post API)
