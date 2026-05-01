@@ -51,7 +51,12 @@ app.use("/quran", quranRoutes);
 app.use("/user", streakRoutes);
 
 app.get("/health", (req, res) => {
-  res.json({ status: "ok" });
+  res.json({ 
+    status: "ok", 
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    environment: process.env.NODE_ENV || "development"
+  });
 });
 
 app.use((err, req, res, next) => {
